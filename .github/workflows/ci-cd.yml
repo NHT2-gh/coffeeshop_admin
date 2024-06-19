@@ -37,7 +37,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/admin:latest
-            docker stop react || true
-            docker rm react || true
+            docker stop admin || true
+            docker rm admin || true
             docker run -d --name admin -e VIRTUAL_HOST=admin.webinstagram.tech -e VIRTUAL_PORT=80 ${{ secrets.DOCKER_HUB_USERNAME }}/admin:latest
 
